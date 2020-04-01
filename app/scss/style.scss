@@ -5,16 +5,16 @@
 
 //HEADER START
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 24px 0;
     z-index: 10;
-    transition: all .5s ease;
+    transition: all .2s ease;
 
     &.active {
-        background-color: #50553e;
+        background-color: #50553e !important;
     }
 
     &__inner {
@@ -41,7 +41,10 @@
         transition: all .5s ease-in-out;
         overflow: auto;
         z-index: 5;
-        transition-delay: .3s;
+        -ms-overflow-style: none;
+        /* IE 10+ */
+        scrollbar-width: none;
+        /* Firefox */
 
         &.active {
             transform: translateX(0);
@@ -183,10 +186,18 @@
         max-width: 156px;
         min-height: 113px;
 
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+
+        }
+
         img {
             display: block;
             max-width: 100%;
             object-fit: cover;
+            transition: all .3s ease;
         }
 
         &:last-child {
@@ -710,7 +721,17 @@
     }
 }
 
+
 //MENU END
+
+
+::-webkit-scrollbar {
+    /* chrome based */
+    width: 0px;
+    /* ширина scrollbar'a */
+    background: transparent;
+    /* опционально */
+}
 
 
 @import "media";

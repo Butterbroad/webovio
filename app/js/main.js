@@ -1,6 +1,3 @@
-$(function () { }
-
-);
 
 const header = document.querySelector('.header');
 const headerBurger = document.querySelector('.header__burger');
@@ -12,4 +9,17 @@ headerBurger.addEventListener('click', function () {
     headerMenu.classList.toggle('active');
     bodyLock.classList.toggle('lock');
     header.classList.toggle('active');
+});
+
+function headerBg() {
+    if ($(window).scrollTop() == 0) {
+        $('#header').css('background', 'transparent');
+    } else {
+        $('#header').css('background', '#50553e');
+    }
+}
+headerBg();
+
+$(window).scroll(function () {
+    headerBg();
 });
