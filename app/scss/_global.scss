@@ -13,6 +13,10 @@ body {
     font-family: 'Poppins';
     font-weight: normal;
     font-style: normal;
+
+    &.lock {
+        overflow: hidden;
+    }
 }
 
 a {
@@ -30,6 +34,15 @@ li {
     max-width: 1140px;
     padding: 0 15px;
     margin: 0 auto;
+}
+
+.logo {
+    z-index: 10;
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
 }
 
 .link {
